@@ -7,7 +7,10 @@ print('Hello! What is your name?')
 myName = input()
 
 number = random.randint(1, 20)
-print(number)
+
+# Knowing the random number, for testing the code
+# print(number)
+
 print('Well, ' + myName + ', I am thinking of a number between 1 and 20.')
 
 for i in range(6):
@@ -15,7 +18,8 @@ for i in range(6):
     guess = input()
     guess = int(guess)
 
-    # guessesTaken = guessesTaken + 1
+    # Chinese version doesn't have line 22, this is a mistake.
+    guessesTaken = guessesTaken + 1
 
     if guess < number:
         print('Your guess is too low.') # Eight spaces in front of "print"
