@@ -49,4 +49,9 @@ words = 'ant baboon badger bat ber beaver camel cat clam cobra cougar \
 # print(words)
 
 def getRandomWord(wordList):
-    pass
+    # This function returns a random string from the passed list of strings.
+    wordIndex = random.randint(0, len(words) - 1)
+    return wordList[wordIndex]
+
+def displayBoard(missedLetters, correctLetters, secretWord):
+
