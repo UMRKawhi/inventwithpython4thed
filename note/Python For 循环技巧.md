@@ -47,3 +47,21 @@ for lab, row in cars.interrows():
     print('{}: {}'.format(lab, row['cars_per_cap']))
 ```
 
+### 4.1 通过iterrows()函数为数据帧添加column
+
+比如我们希望为数据帧添加一列，这列内容为country的名字，并且全部由大写字母组成
+
+```Python
+# 引入库和数据
+import pandas as pd
+cars = pd.read_csv('cars.csv', index_col = 0)
+
+# Code for loop that adds COUNTRY column
+for lab, row in cars.iterrows():
+    # 切记，row是一个Series，写成cars.loc[lab, row['country']]是错误的
+    # 因为row['country']可能是Australia，而cars不存在一个叫做Australia的列
+    cars.loc[lab, 'COUNTRY'] = row['country'].upper()
+```
+
+### 4.2 通过apply()函数实现高效运算
+
