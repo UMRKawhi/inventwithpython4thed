@@ -65,3 +65,14 @@ for lab, row in cars.iterrows():
 
 ### 4.2 通过apply()函数实现高效运算
 
+4.1的操作可以通过apply函数来实现，代码如下：
+
+```python
+# Import cars data
+import pandas as pd
+cars = pd.read_csv('cars.csv', index_col = 0)
+
+# Use .apply(str.upper)
+cars['COUNTRY'] = cars['country'].apply(str.upper)
+```
+
